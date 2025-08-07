@@ -1,0 +1,23 @@
+{
+  "name": "banco-de-dados",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "export-with-toc": "slidev export --with-toc",
+    "lecture-0": "slidev lectures/lecture-0/lecture-0.md",
+    "lecture-1": "slidev lectures/lecture-1/lecture-1.md",
+    "lecture-2": "slidev lectures/lecture-2/lecture-2.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.0.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.54.2"
+  }
+}

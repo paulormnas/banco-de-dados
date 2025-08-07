@@ -1,0 +1,28 @@
+---
+layout: default
+transition: slide-up
+class: text-justify
+---
+
+# Exemplo de Docker Compose para MySQL
+
+```yaml
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: meu_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: minhasenha123
+      MYSQL_DATABASE: loja
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: senha123
+    ports:
+      - "3306:3306"
+    volumes:
+      - dados_mysql:/var/lib/mysql
+
+volumes:
+  dados_mysql:
+
+```
