@@ -953,39 +953,39 @@ version: '3.8'
 services:
   # Serviço da aplicação web (Python/Flask)
   app:
-	# Constrói a imagem a partir do Dockerfile no diretório atual (.)
-	build: .
-	container_name: app-escola
-	# Mapeia a porta 5000 do host para a porta 5000 do container
-	ports:
-	  - "8000:8000"
-	# Define as variáveis de ambiente que a aplicação usará para conectar ao banco
-	environment:
-	  DB_HOST: db # Usa o nome do serviço 'db' para se conectar
-	  DB_USER: aluno
-	  DB_PASSWORD: aluno123
-	  DB_NAME: escola
-	# Garante que o serviço 'db' será iniciado antes do serviço 'app'
-	depends_on:
-	  - db
-	restart: on-failure
+    # Constrói a imagem a partir do Dockerfile no diretório atual (.)
+    build: .
+    container_name: app-escola
+    # Mapeia a porta 5000 do host para a porta 5000 do container
+    ports:
+      - "8000:8000"
+    # Define as variáveis de ambiente que a aplicação usará para conectar ao banco
+    environment:
+      DB_HOST: db # Usa o nome do serviço 'db' para se conectar
+      DB_USER: aluno
+      DB_PASSWORD: aluno123
+      DB_NAME: escola
+    # Garante que o serviço 'db' será iniciado antes do serviço 'app'
+    depends_on:
+      - db
+    restart: on-failure
 
   # Serviço do banco de dados (MySQL)
   db:
-	image: mysql:8.0
-	container_name: db-escola
-	# Variáveis de ambiente para configurar o MySQL
-	environment:
-	  MYSQL_ROOT_PASSWORD: senha123
-	  MYSQL_DATABASE: escola
-	  MYSQL_USER: aluno
-	  MYSQL_PASSWORD: aluno123
-	# Monta um volume nomeado para persistir os dados do banco
-	volumes:
-	  - db_data:/var/lib/mysql
-	  # Monta o script SQL para inicializar o banco na primeira vez
-	  - ../scripts/criar-tabelas.sql:/docker-entrypoint-initdb.d/init.sql
-	restart: always
+    image: mysql:8.0
+    container_name: db-escola
+    # Variáveis de ambiente para configurar o MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: senha123
+      MYSQL_DATABASE: escola
+      MYSQL_USER: aluno
+      MYSQL_PASSWORD: aluno123
+    # Monta um volume nomeado para persistir os dados do banco
+    volumes:
+      - db_data:/var/lib/mysql
+      # Monta o script SQL para inicializar o banco na primeira vez
+      - ../scripts/criar-tabelas.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
 
 # Definição dos volumes nomeados
 volumes:
