@@ -50,6 +50,9 @@ Antes de começar as tarefas práticas, é necessário instalar e configurar o G
     - Acesse: https://git-scm.com/download/win
     - Clique em "Download for Windows"
     - Execute o arquivo baixado (.exe)
+
+Durante a instalação, também será automaticamente instalado o Git Bash. Essa é uma ferramenta de terminal que facilita a execução de comandos do git com uma interface similar ao terminal do Linux. O uso Git Bash é recomendado mas não é obrigatório para desenvolver as tarefas, podendo ser substituído pelo Prompt de Comando (cmd) ou Power Shell.
+
 2. **Durante a instalação**:
     
     - Aceite as configurações padrão na maioria das telas
