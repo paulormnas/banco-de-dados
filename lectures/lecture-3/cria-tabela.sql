@@ -1,3 +1,5 @@
+CREATE SCHEMA escola;
+
 -- Script de criação de tabelas para o banco escola
 USE escola;
 
