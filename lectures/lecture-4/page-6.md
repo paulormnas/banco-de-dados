@@ -12,5 +12,5 @@ DISTINCT é usado para pegar apenas valores diferentes para uma mesma coluna.
 </div>
 
 ```sql
-SELECT AVG(nota) AS nota_media, data_avaliacao FROM notas GROUP BY data_avaliacao HAVING nota_media >= 7;
+SELECT DISTINCT curso FROM estudantes;
 ```

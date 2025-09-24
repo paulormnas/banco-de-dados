@@ -12,7 +12,7 @@ layout: cover
 
 <div>
 
-    Aula 3 - Funções de Agregação, GROUP BY, ORDER BY e HAVING
+    Aula 4 - Funções de Agregação, GROUP BY, ORDER BY, HAVING e DISTINCT
 
 </div>
 <!-- </div> -->
