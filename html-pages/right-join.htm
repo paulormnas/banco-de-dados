@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIGHT JOIN - Diagrama de Venn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+
+        .join-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #FF9800;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .venn-diagram {
+            position: relative;
+            width: 450px;
+            height: 300px;
+            margin-bottom: 30px;
+        }
+
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            position: absolute;
+            border: 3px solid #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .circle-a {
+            left: 0;
+            top: 25px;
+            background-color: #2196F3;
+            border-color: #1976D2;
+            opacity: 0.3;
+        }
+
+        .circle-b {
+            right: 0;
+            top: 25px;
+            background-color: #FF9800;
+            border-color: #FB8C00;
+            opacity: 0.9;
+        }
+
+        .label {
+            position: absolute;
+            top: 10px;
+            font-size: 18px;
+        }
+
+        .join-label {
+            position: absolute;
+            font-size: 14px;
+            font-weight: bold;
+            color: #FF9800;
+            background-color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            border: 2px solid #FF9800;
+            z-index: 10;
+            top: 135px;
+            right: 50px;
+        }
+
+        .explanation {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .explanation h2 {
+            color: #FF9800;
+            margin-top: 0;
+        }
+
+        .explanation p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .highlight {
+            background-color: #fff3e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #F57C00;
+        }
+    </style>
+</head>
+<body>
+    <div class="join-container">
+        <h1>RIGHT JOIN</h1>
+        <!-- <p class="subtitle">Diagrama de Venn SQL</p> -->
+
+        <div class="venn-diagram">
+            <div class="circle circle-a">
+                <span class="label">Tabela A</span>
+            </div>
+
+            <div class="circle circle-b">
+                <span class="label">Tabela B</span>
+            </div>
+
+            <div class="join-label">RIGHT JOIN</div>
+        </div>
+
+        <!-- <div class="explanation">
+            <h2>Como funciona?</h2>
+            <p>O <span class="highlight">RIGHT JOIN</span> retorna <strong>TODOS os registros da Tabela B (direita)</strong>, independentemente de haver correspondência na Tabela A.</p>
+            <p>Quando há correspondência na Tabela A, os dados são incluídos. Quando não há, os campos da Tabela A aparecem como <strong>NULL</strong>.</p>
+        </div> -->
+    </div>
+</body>
+</html>

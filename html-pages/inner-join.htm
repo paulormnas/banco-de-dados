@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNER JOIN - Diagrama de Venn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+
+        .join-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .venn-diagram {
+            position: relative;
+            width: 450px;
+            height: 300px;
+            margin-bottom: 30px;
+        }
+
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0.9;
+            border: 3px solid #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .circle-a {
+            left: 0;
+            top: 25px;
+            background-color: #2196F3;
+            border-color: #1976D2;
+        }
+
+        .circle-b {
+            right: 0;
+            top: 25px;
+            background-color: #FF9800;
+            border-color: #FB8C00;
+        }
+
+        .label {
+            position: absolute;
+            top: 10px;
+            font-size: 18px;
+        }
+
+        .intersection {
+            position: absolute;
+            width: auto;
+            height: auto;
+            top: 135px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intersection-label {
+            font-size: 14px;
+            color: #007bff;
+            background-color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            border: 2px solid #007bff;
+        }
+
+        .explanation {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .explanation h2 {
+            color: #007bff;
+            margin-top: 0;
+        }
+
+        .explanation p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="join-container">
+        <h1>INNER JOIN</h1>
+
+        <div class="venn-diagram">
+            <div class="circle circle-a">
+                <span class="label">Tabela A</span>
+            </div>
+
+            <div class="circle circle-b">
+                <span class="label">Tabela B</span>
+            </div>
+
+            <div class="intersection">
+                <span class="intersection-label">INNER</span>
+            </div>
+        </div>
+
+        <!-- <div class="explanation">
+            <h2>Como funciona?</h2>
+            <p>O <span class="highlight">INNER JOIN</span> retorna apenas os registros que possuem <strong>correspondência em AMBAS as tabelas</strong>.</p>
+            <p>Se um registro existe apenas na Tabela A ou apenas na Tabela B, ele <strong>não será incluído</strong> no resultado.</p>
+        </div> -->
+    </div>
+</body>
+</html>

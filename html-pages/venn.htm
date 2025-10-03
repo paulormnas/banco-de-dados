@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Venn: SQL JOINs (Completo)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+            background-color: #f4f4f9;
+        }
+
+        .join-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .venn-diagram {
+            position: relative;
+            width: 450px;
+            height: 300px;
+            margin-bottom: 50px;
+        }
+
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0.6;
+            border: 3px solid #666;
+            transition: all 0.4s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .circle-a {
+            left: 0;
+            top: 25px;
+            background-color: #2196F3;
+            border-color: #1976D2;
+        }
+
+        .circle-b {
+            right: 0;
+            top: 25px;
+            background-color: #FF9800;
+            border-color: #FB8C00;
+        }
+
+        .label {
+            position: absolute;
+            top: 10px;
+        }
+
+        .intersection {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 75px;
+            left: 150px;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            pointer-events: none;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            background-color: transparent;
+        }
+
+        .join-label {
+            position: absolute;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 8px 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 10;
+        }
+
+        .join-label.visible {
+            opacity: 1;
+        }
+
+        #left-label {
+            top: 140px;
+            left: 50px;
+        }
+
+        #right-label {
+            top: 140px;
+            right: 50px;
+        }
+
+        #inner-label {
+            top: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #full-label {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #left-only-label {
+            top: 140px;
+            left: 50px;
+        }
+
+        #right-only-label {
+            top: 140px;
+            right: 50px;
+        }
+
+        #no-match-label {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .join-explanations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .join-box {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .join-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .join-box h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .circle.dimmed {
+            opacity: 0.2;
+        }
+
+        .circle.highlighted {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="join-container">
+        <h1>Diagrama de Venn: SQL JOINs</h1>
+
+        <div class="venn-diagram">
+            <div id="table-a" class="circle circle-a">
+                <span class="label">Tabela A</span>
+            </div>
+
+            <div id="table-b" class="circle circle-b">
+                <span class="label">Tabela B</span>
+            </div>
+
+            <div id="intersection" class="intersection">
+            </div>
+
+            <div id="left-label" class="join-label">LEFT JOIN</div>
+            <div id="right-label" class="join-label">RIGHT JOIN</div>
+            <div id="inner-label" class="join-label">INNER JOIN</div>
+        </div>
+
+        <div class="join-explanations">
+            <p style="text-align: center; font-weight: bold; grid-column: 1 / -1;">Clique no tipo de JOIN para ver o destaque no diagrama.</p>
+
+            <div class="join-box" onclick="highlightJoin('INNER')">
+                <h3>INNER JOIN</h3>
+                <p>Retorna registros que possuem <strong>correspondência em AMBAS as tabelas</strong>.</p>
+            </div>
+
+            <div class="join-box" onclick="highlightJoin('LEFT')">
+                <h3>LEFT JOIN</h3>
+                <p>Retorna <strong>TODOS os registros da Tabela A (Esquerda)</strong>, além das correspondências da Tabela B.</p>
+            </div>
+
+            <div class="join-box" onclick="highlightJoin('RIGHT')">
+                <h3>RIGHT JOIN</h3>
+                <p>Retorna <strong>TODOS os registros da Tabela B (Direita)</strong>, além das correspondências da Tabela A.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function highlightJoin(type) {
+            const A = document.getElementById('table-a');
+            const B = document.getElementById('table-b');
+            
+            const leftLabel = document.getElementById('left-label');
+            const rightLabel = document.getElementById('right-label');
+            const innerLabel = document.getElementById('inner-label');
+
+            A.className = 'circle circle-a';
+            B.className = 'circle circle-b';
+            
+            leftLabel.classList.remove('visible');
+            rightLabel.classList.remove('visible');
+            innerLabel.classList.remove('visible');
+
+            switch (type) {
+                case 'INNER':
+                    A.classList.add('highlighted');
+                    B.classList.add('highlighted');
+                    innerLabel.classList.add('visible');
+                    break;
+                case 'LEFT':
+                    A.classList.add('highlighted');
+                    B.classList.add('dimmed');
+                    leftLabel.classList.add('visible');
+                    break;
+                case 'RIGHT':
+                    A.classList.add('dimmed');
+                    B.classList.add('highlighted');
+                    rightLabel.classList.add('visible');
+                    break;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => highlightJoin('INNER'));
+    </script>
+
+</body>
+</html>
