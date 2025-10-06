@@ -10,18 +10,14 @@ class: text-justify
 
 O SQL ainda pode ser dividido em subconjuntos de acordo com as operações que desejamos executar:
 
-1. **Data Manipulation Language (DML) - Lingaugem de Manipulação de Dados**
-
+1. **Data Manipulation Language (DML) - Lingaugem de Manipulação de Dados**:
 &emsp; INSERT, UPDATE e DELETE
 
-2. **Data Definition Language (DDL) - Linguagem de Definição de Dados**
-  
+2. **Data Definition Language (DDL) - Linguagem de Definição de Dados**:
 &emsp; CREATE, ALTER, DROP
 
-3. **Data Control Language (DCL) - Linguagem de Controle de Dados**
-
+3. **Data Control Language (DCL) - Linguagem de Controle de Dados**:
 &emsp; GRANT e REVOKE
 
-4. **Data Query Language (DQL) - Linguagem de Consulta de Dados**
-
+4. **Data Query Language (DQL) - Linguagem de Consulta de Dados**:
 &emsp; SELECT
