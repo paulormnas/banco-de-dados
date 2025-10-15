@@ -156,13 +156,13 @@ INSERT INTO livros (titulo, ano_publicacao, isbn, autor_id, editora_id) VALUES
 ('Dom Casmurro', 1899, '978-8535902778', 1, 1),
 ('Memórias Póstumas de Brás Cubas', 1881, '978-8535905205', 1, 1),
 ('A Hora da Estrela', 1977, '978-8535908022', 2, 2),
-('1984', 1949, '978-8535902778', 3, 3),
-('Orgulho e Preconceito', 1813, '978-8535902778', 4, 3),
-('Cem Anos de Solidão', 1967, '978-8535902778', 5, 2),
-('Ensaio sobre a Cegueira', 1995, '978-8535902778', NULL, 1); -- Livro sem autor cadastrado
+('1984', 1949, '978-8535902771', 3, 3),
+('Orgulho e Preconceito', 1813, '978-8535902772', 4, 3),
+('Cem Anos de Solidão', 1967, '978-8535902773', 5, 2),
+('Ensaio sobre a Cegueira', 1995, '978-8535902774', NULL, 1); -- Livro sem autor cadastrado
 
 INSERT INTO livros (titulo, ano_publicacao, isbn, autor_id, editora_id) VALUES
-('O Alienista', 1882, '978-8535902778', 1, 1);
+('O Alienista', 1882, '978-8535902775', 1, 1);
   
 -- Membros
 INSERT INTO membros (nome, endereco, telefone, email) VALUES
