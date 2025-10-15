@@ -1088,12 +1088,6 @@ git push origin main
 
 ----------------------------
 
-Excelente ideia! Uma boa conclusão ajuda a consolidar o aprendizado e a garantir que todos os critérios de avaliação foram atendidos.
-
-Aqui está uma proposta de conclusão final, adaptada para o seu Estudo Dirigido sobre Docker:
-
----
-
 ## Conclusão
 
 Você chegou ao final das tarefas práticas deste estudo dirigido! Agora você tem uma base sólida sobre como utilizar Docker para criar, gerenciar e orquestrar ambientes de desenvolvimento containerizados, uma habilidade essencial no mercado de tecnologia atual.
