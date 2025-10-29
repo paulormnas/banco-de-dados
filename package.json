@@ -5,14 +5,15 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export lecture-5",
+    "export": "slidev export lecture-6",
     "export-with-toc": "slidev export --with-toc",
     "lecture-0": "slidev lecture-0.md",
     "lecture-1": "slidev lecture-1.md",
     "lecture-2": "slidev lecture-2.md",
     "lecture-3": "slidev lecture-3.md",
     "lecture-4": "slidev lecture-4.md",
-    "lecture-5": "slidev lecture-5.md"
+    "lecture-5": "slidev lecture-5.md",
+    "lecture-6": "slidev lecture-6.md"
   },
   "dependencies": {
     "@slidev/cli": "^52.0.0",
