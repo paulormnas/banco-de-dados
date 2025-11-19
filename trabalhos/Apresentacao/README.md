@@ -160,21 +160,8 @@ Seu README deve conter:
 - [Entidade A] → [Entidade B]: [Tipo de relacionamento e descrição]
 - ...
 
-## Instruções de Uso
-
-### Executar o banco de dados
-1. Clone este repositório
-2. Execute o arquivo `database/schema.sql` em seu SGBD
-3. Verifique a criação das tabelas e dados de exemplo
-
-### Queries de exemplo
-[Incluir 2-3 exemplos de queries úteis]
-
 ## Decisões de Design
 [Explicar decisões importantes, como normalização, índices, etc.]
-
-## Melhorias Futuras
-[Sugestões de expansão do projeto]
 ```
 
 ## 📊 Critérios de Avaliação

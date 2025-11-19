@@ -5,7 +5,7 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export lecture-7",
+    "export": "slidev export lecture-8",
     "export-with-toc": "slidev export --with-toc",
     "lecture-0": "slidev lecture-0.md",
     "lecture-1": "slidev lecture-1.md",
