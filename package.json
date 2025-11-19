@@ -14,7 +14,8 @@
     "lecture-4": "slidev lecture-4.md",
     "lecture-5": "slidev lecture-5.md",
     "lecture-6": "slidev lecture-6.md",
-    "lecture-7": "slidev lecture-7.md"
+    "lecture-7": "slidev lecture-7.md",
+    "lecture-8": "slidev lecture-8.md"
   },
   "dependencies": {
     "@slidev/cli": "^52.0.0",
